@@ -22,6 +22,7 @@ addButton.addEventListener('click', function() {
     // Create delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'DELETE';
+    deleteButton.classList.add('delete-btn');
 
     // Add event listener to the delete button
     deleteButton.addEventListener('click', function() {
@@ -50,3 +51,6 @@ buttonContainer.appendChild(addButton);
 // Add the container to the top of the page
 const body = document.querySelector('body');
 body.insertBefore(buttonContainer, body.firstChild);
+
+
+// --------------------------

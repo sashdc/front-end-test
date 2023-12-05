@@ -1,7 +1,5 @@
-/* import a stylish font ans use it */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-/* import silly font */
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 
 
 * {
@@ -13,6 +11,7 @@
 /* make title bigger and make full body darker colour */
 body {
     font-family: 'Roboto', sans-serif;
+    text-shadow: black 0.2em 0.2em 0.2em;
     background-color: #000;
     color: #fff;
     padding: 2rem;
@@ -22,15 +21,19 @@ body {
 
 /* style the button */
 button {
-    background-color: #bb1b13;
+    background-color: green;
     color: #fff;
-    padding: 1rem;
+    padding: .5rem;
     border: none;
     border-radius: 10px;
-    font-size: 1.5rem;
-    margin: 1rem;
+    font-size: 1rem;
+    margin: .2rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+}
+
+.delete-btn{
+    background-color: red;
 }
 
 header{
@@ -77,9 +80,11 @@ h1 {
 
 /* make hero stylish and dark colour background */
 .hero {
-    background-color: #000;
+    background-color: purple ;
+    display: inline-block;
+    border-radius: 20px;
     color: #fff;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
 }
 
@@ -109,8 +114,7 @@ h1 {
     transform: scale(1) ;
     opacity: 1;
     border-radius: 10px;
-    /* font-family: "permanent marker"; */
-    /* animation: spin 1s ease-in-out; */
+    text-shadow: none;
 }
 
 /* make the card change background colour and font colour on click and keep it that way till clicked off */
