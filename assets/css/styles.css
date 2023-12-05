@@ -1,0 +1,142 @@
+/* import a stylish font ans use it */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+/* import silly font */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* make title bigger and make full body darker colour */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+
+}
+
+header{
+    padding: 40px;
+    display: flex;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #c8c3c3;
+    text-align: center;
+    background-color: #bb1b13;
+    display: inline-block;
+    /* add pulsing animation */
+    /* animation: pulse 1s infinite; */
+    border-radius: 30px;
+    padding: 20px;
+    margin: auto;
+}
+
+/* add pulsing animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 50%;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 100%;
+        border-radius: 30px;
+        padding: 12px;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 50%;
+        border-radius: 10px;
+        padding: 10px;
+    }
+}
+
+/* make hero stylish and dark colour background */
+.hero {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* make hero title bigger */
+.hero h1 {
+    font-size: 3rem;
+}
+
+/* add animations to the cards on hover and entrance */
+.card {
+    background: linear-gradient(#211616 0%, #bb1b13 100%);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0.9);
+    opacity: 0.6;
+    border-radius: 80px;
+}
+
+.card:hover {
+    transform: scale(1) ;
+    opacity: 1;
+    border-radius: 10px;
+    /* font-family: "permanent marker"; */
+    animation: spin 1s ease-in-out;
+
+}
+
+/* make every second card a differnet gradient colour */
+.card:nth-child(2n) {
+    background: linear-gradient(#211616 0%, #13bb37 100%);
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/* create animation to spin element 2 times*/
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(18deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* make responsive */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+    }
+}
