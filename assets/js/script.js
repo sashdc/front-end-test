@@ -23,10 +23,35 @@ addButton.addEventListener('click', function() {
     // Create an image element with user input
     const imageElement = document.createElement('img');
     imageElement.src = imageInput;
+    // make image small
+    imageElement.style.width = '200px';
+    // imageElement.style.height = '200px';
+    imageElement.style.borderRadius = '20px';
+
 
     // Create delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'DELETE';
+
+    // Create an edit button
+    const editButton = document.createElement('button');
+    editButton.textContent = 'EDIT';
+    editButton.classList.add('edit-btn');
+
+    // Add event listener to the edit button
+    editButton.addEventListener('click', function() {
+        // Get the user input for h3, p, and image
+        const editedH3Input = prompt('Enter the updated text for card heading:', h3Element.textContent);
+        const editedPInput = prompt('Enter the updated text for card content:', pElement.textContent);
+        const editedImageInput = prompt('Enter the updated URL of the image:', imageElement.src);
+
+        // Update the h3, p, and image elements with user input
+        h3Element.textContent = editedH3Input;
+        pElement.textContent = editedPInput;
+        imageElement.src = editedImageInput;
+    });
+
+   
     deleteButton.classList.add('delete-btn');
 
     // Add event listener to the delete button
@@ -40,6 +65,8 @@ addButton.addEventListener('click', function() {
     newCard.appendChild(pElement);
     newCard.appendChild(imageElement);
     newCard.appendChild(deleteButton);
+     // Append the edit button to the new card
+     newCard.appendChild(editButton);
 
     // Append the new card to the page
     document.querySelector('.grid').appendChild(newCard);
