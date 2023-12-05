@@ -5,9 +5,10 @@ addButton.textContent = 'ADD';
 
 // Add event listener to the button
 addButton.addEventListener('click', function() {
-    // Get the user input for h3 and p
+    // Get the user input for h3, p, and image
     const h3Input = prompt('Enter the text for card heading:');
     const pInput = prompt('Enter the text for card content');
+    const imageInput = prompt('Enter the URL of the image:');
 
     // Create a new card element
     const newCard = document.createElement('div');
@@ -18,6 +19,10 @@ addButton.addEventListener('click', function() {
     h3Element.textContent = h3Input;
     const pElement = document.createElement('p');
     pElement.textContent = pInput;
+
+    // Create an image element with user input
+    const imageElement = document.createElement('img');
+    imageElement.src = imageInput;
 
     // Create delete button
     const deleteButton = document.createElement('button');
@@ -30,16 +35,15 @@ addButton.addEventListener('click', function() {
         newCard.remove();
     });
 
-    // Append h3, p, and delete button elements to the new card
+    // Append h3, p, image, and delete button elements to the new card
     newCard.appendChild(h3Element);
     newCard.appendChild(pElement);
+    newCard.appendChild(imageElement);
     newCard.appendChild(deleteButton);
 
     // Append the new card to the page
     document.querySelector('.grid').appendChild(newCard);
 });
-
-
 
 // Create a container for the buttons
 const buttonContainer = document.createElement('div');
@@ -52,5 +56,15 @@ buttonContainer.appendChild(addButton);
 const body = document.querySelector('body');
 body.insertBefore(buttonContainer, body.firstChild);
 
+// Create a print button
+const printButton = document.createElement('button');
+printButton.textContent = 'PRINT';
+printButton.addEventListener('click', function() {
+    // Save the page as a JPEG
+    document.print();
+});
 
-// --------------------------
+// Add the print button to the bottom of the page
+buttonContainer.appendChild(printButton);
+
+
