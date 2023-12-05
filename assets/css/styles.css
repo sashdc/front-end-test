@@ -20,6 +20,19 @@ body {
 
 }
 
+/* style the button */
+button {
+    background-color: #bb1b13;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
 header{
     padding: 40px;
     display: flex;
@@ -97,18 +110,34 @@ h1 {
     opacity: 1;
     border-radius: 10px;
     /* font-family: "permanent marker"; */
-    animation: spin 1s ease-in-out;
-
+    /* animation: spin 1s ease-in-out; */
 }
 
-/* make every second card a differnet gradient colour */
+/* make the card change background colour and font colour on click and keep it that way till clicked off */
+.card:active {
+    background: linear-gradient(#211616 0%, #5c13bb 100%);
+    color: #b9b9b9;
+}
+
+.card:nth-child(2n):active {
+    background: linear-gradient(#211616 0%, #a2bb13 100%);
+}
+
+
+
+/* make every third card a differnet gradient colour */
 .card:nth-child(2n) {
     background: linear-gradient(#211616 0%, #13bb37 100%);
 }
 
+
 .grid {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    /* flex-direction: row; */
+    
+    grid-template-columns: repeat(3, 1fr);
+
+
     justify-content: center;
     align-items: center;
     align-items: center;
@@ -137,6 +166,12 @@ h1 {
 /* make responsive */
 @media (max-width: 768px) {
     .grid {
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
