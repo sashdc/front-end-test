@@ -1,6 +1,3 @@
-// import animate library
-
-
 // Create a button element
 const addButton = document.createElement('button');
 addButton.textContent = 'ADD';
@@ -31,22 +28,17 @@ addButton.addEventListener('click', function() {
     const imageElement = document.createElement('img');
     imageElement.src = imageInput;
     // make image small
-    imageElement.style.maxWidth = '200px';
-    imageElement.style.maxHeight = '200px';
-    imageElement.style.borderRadius = '20px';
-    imageElement.style.border = '2px solid black';
-    imageElement.style.margin.boxShadow = '5px 10px 18px #888888';
+    // imageElement.style.maxWidth = '200px';
+    // imageElement.style.maxHeight = '150px';
+    // imageElement.style.borderRadius = '20px';
+    // imageElement.style.border = '2px solid black';
+    // imageElement.style.margin.boxShadow = '5px 10px 18px #888888';
     imageElement.style.margin = '10px';
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('button-container');	
     buttonContainer.style.display = 'flex';
     buttonContainer.style.justifyContent = 'space-between';
-
-
-    // Create delete button
-    // const deleteButton = document.createElement('button');
-    // deleteButton.textContent = 'DELETE';
 
     // create delete button using font awesome icon
     const dltButton = document.createElement('i');
@@ -63,11 +55,6 @@ addButton.addEventListener('click', function() {
     editButton.classList.add('btn')
 
 
-    // Create an edit button
-    // const editButton = document.createElement('button');
-    // create edit button using font awesome icon
-    // editButton.textContent = 'EDIT';
-    // editButton.classList.add('edit-btn');
 
     // Add event listener to the edit button
     editButton.addEventListener('click', function() {
@@ -83,12 +70,16 @@ addButton.addEventListener('click', function() {
     });
 
    
-    // deleteButton.classList.add('delete-btn');
 
     // Add event listener to the delete button
     dltButton.addEventListener('click', function() {
         // Remove the card from the page
-        newCard.remove();
+        // add prompt tpo confirm delete
+        const confirmDelete = confirm('Are you sure you want to delete this card?');
+        if (confirmDelete)
+            newCard.remove();
+        else
+            return;
     });
 
     // Append h3, p, image, and delete button elements to the new card
