@@ -24,9 +24,12 @@ addButton.addEventListener('click', function() {
     const imageElement = document.createElement('img');
     imageElement.src = imageInput;
     // make image small
-    imageElement.style.width = '200px';
-    // imageElement.style.height = '200px';
+    imageElement.style.maxWidth = '200px';
+    imageElement.style.maxHeight = '200px';
     imageElement.style.borderRadius = '20px';
+    imageElement.style.border = '2px solid black';
+    imageElement.style.margin.boxShadow = '5px 10px 18px #888888';
+    imageElement.style.margin = '10px';
 
 
     // Create delete button
