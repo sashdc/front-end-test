@@ -31,15 +31,36 @@ addButton.addEventListener('click', function() {
     imageElement.style.margin.boxShadow = '5px 10px 18px #888888';
     imageElement.style.margin = '10px';
 
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container');	
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.justifyContent = 'space-between';
+
 
     // Create delete button
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'DELETE';
+    // const deleteButton = document.createElement('button');
+    // deleteButton.textContent = 'DELETE';
+
+    // create delete button using font awesome icon
+    const dltButton = document.createElement('i');
+    dltButton.classList.add('fa');
+    dltButton.classList.add('fa-trash');
+    dltButton.classList.add('delete-btn')
+    dltButton.classList.add('btn')
+
+// create edit button using font awesome icon
+    const editButton = document.createElement('i');
+    editButton.classList.add('fa');
+    editButton.classList.add('fa-edit');
+    editButton.classList.add('edit-btn')
+    editButton.classList.add('btn')
+
 
     // Create an edit button
-    const editButton = document.createElement('button');
-    editButton.textContent = 'EDIT';
-    editButton.classList.add('edit-btn');
+    // const editButton = document.createElement('button');
+    // create edit button using font awesome icon
+    // editButton.textContent = 'EDIT';
+    // editButton.classList.add('edit-btn');
 
     // Add event listener to the edit button
     editButton.addEventListener('click', function() {
@@ -55,10 +76,10 @@ addButton.addEventListener('click', function() {
     });
 
    
-    deleteButton.classList.add('delete-btn');
+    // deleteButton.classList.add('delete-btn');
 
     // Add event listener to the delete button
-    deleteButton.addEventListener('click', function() {
+    dltButton.addEventListener('click', function() {
         // Remove the card from the page
         newCard.remove();
     });
@@ -67,9 +88,11 @@ addButton.addEventListener('click', function() {
     newCard.appendChild(h3Element);
     newCard.appendChild(pElement);
     newCard.appendChild(imageElement);
-    newCard.appendChild(deleteButton);
+    newCard.appendChild(buttonContainer);
+
+    buttonContainer.appendChild(dltButton);
      // Append the edit button to the new card
-     newCard.appendChild(editButton);
+     buttonContainer.appendChild(editButton);
 
     // Append the new card to the page
     document.querySelector('.grid').appendChild(newCard);
