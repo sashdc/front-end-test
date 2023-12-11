@@ -27,13 +27,27 @@ addButton.addEventListener('click', function() {
     // Create an image element with user input
     const imageElement = document.createElement('img');
     imageElement.src = imageInput;
-    // make image small
-    // imageElement.style.maxWidth = '200px';
-    // imageElement.style.maxHeight = '150px';
-    // imageElement.style.borderRadius = '20px';
-    // imageElement.style.border = '2px solid black';
-    // imageElement.style.margin.boxShadow = '5px 10px 18px #888888';
-    imageElement.style.margin = '10px';
+     imageElement.style.margin = '10px';
+    //  make it so clicking image keeps it active until clicked away
+    imageElement.addEventListener('click', function() {
+        // Add the active class to the image
+        imageElement.classList.toggle('img-active');
+    }
+    );
+    // make it so clicking anywhere else removes the acitve class from the iamge
+    document.addEventListener('click', function(event) {
+        // Check if the image is active
+        if (imageElement.classList.contains('img-active')) {
+            // Check if the click is on the image
+            if (event.target === imageElement)
+                return;
+            else
+                // Remove the active class from the image
+                imageElement.classList.remove('img-active');
+        }
+    }
+    );
+
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('button-container');	

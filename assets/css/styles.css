@@ -146,7 +146,6 @@ h1 {
     background: grey;
     color: #e6e5e5;
     padding: .5rem;
-    /* padding-bottom: .5rem; */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -154,12 +153,10 @@ h1 {
     align-items: center;
     margin: 1rem;
     transition: all 0.3s ease-in-out;
-    /* transform: scale(0.7); */
     opacity: 0.8;
     border-radius: 30px;
     border: solid 2px #c9c9c973;
     box-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px rgba(0, 0, 0, 0.8);
-    position: relative;
 }
 
 .card:hover {
@@ -183,7 +180,6 @@ h1 {
 /* make every third card a differnet gradient colour */
 .card:nth-child(2n) {
     background: darkgrey;
-    /* animation: spin 3s infinite linear; */
 }
 
 img{
@@ -192,28 +188,25 @@ img{
     border: 2px solid #c9c9c973;
     object-fit: cover;
     border-radius: 30px;
+    transition: all 0.4s ease-in-out;
+
 
 }
 
 img:hover{
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     transition: all 0.4s ease-in-out;
     cursor: pointer;
     box-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px rgba(0, 0, 0, 0.8);
 }
 
-img:active{
-    transform: scale(2);
-    /* move to middle of window */
-position: relative;
-top: 0%;
+ .img-active{
+    transform: scale(3);
     transition: all 0.4s ease-in-out;
     cursor: pointer;
     border: 1px solid #d6000073;
     border-radius: 0px;
     box-shadow: none;
-
-
 }
 
 .grid {
