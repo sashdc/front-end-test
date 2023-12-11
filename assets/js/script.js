@@ -1,3 +1,5 @@
+// import animate library
+
 
 // Create a button element
 const addButton = document.createElement('button');
@@ -13,6 +15,11 @@ addButton.addEventListener('click', function() {
     // Create a new card element
     const newCard = document.createElement('div');
     newCard.classList.add('card');
+    // add animate.css class to the new card
+    newCard.classList.add('animate__animated');
+
+    newCard.classList.add('animate__rubberBand');
+
 
     // Create h3 and p elements with user input
     const h3Element = document.createElement('h3');
