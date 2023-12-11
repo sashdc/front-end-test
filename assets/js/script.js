@@ -121,15 +121,3 @@ buttonContainer.appendChild(addButton);
 const body = document.querySelector('body');
 body.insertBefore(buttonContainer, body.firstChild);
 
-// Create a print button
-const printButton = document.createElement('button');
-printButton.textContent = 'PRINT';
-printButton.addEventListener('click', function() {
-    // Save the page as a JPEG
-    document.print();
-});
-
-// Add the print button to the bottom of the page
-buttonContainer.appendChild(printButton);
-
-
