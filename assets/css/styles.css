@@ -23,7 +23,12 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    border-radius: 50%;
+    border-radius: 100%;
+    background-color: rgb(7, 139, 7);
+    padding: 10px;
+    box-shadow: -1px -1px 0px rgba(255, 255, 255, 0.3), 1px 1px 0px rgba(0, 0, 0, 0.8);
+
+
 }
 
 /* style the button */
@@ -87,7 +92,7 @@ text-shadow: #4848483b 0.05rem 0.5rem 0.3rem ;
 }
 
 header{
-    padding: 20px;
+    /* padding: 20px; */
     display: flex;
 }
 
@@ -129,9 +134,7 @@ h1 {
     }
 }
 
-/* make hero stylish and dark colour background */
 .hero {
-    /* background-color: rgba(128, 0, 128, 0.32) ; */
     font-family: Rowdies;
 
     display: inline-block;
@@ -214,6 +217,8 @@ img:hover{
     border: 1px solid #d6000073;
     border-radius: 0px;
     box-shadow: none;
+    /* bring to the top */
+    z-index: 1;
 }
 
 .grid {
