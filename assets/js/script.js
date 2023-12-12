@@ -48,7 +48,7 @@ function createCard(h3Input, pInput, imageInput) {
 
     const imageElement = document.createElement("img");
     // add ternary operateor for image source using placehoolder image if no link is provided
-    imageInput === "" ? imageElement.src = "https://via.placeholder.com/150" :
+    imageInput === "" ? imageElement.src = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" :
     imageElement.src = imageInput;
     imageElement.classList.add("img");
 
@@ -76,7 +76,7 @@ function createCard(h3Input, pInput, imageInput) {
 
         h3Element.textContent = editedH3Input;
         pElement.textContent = editedPInput;
-        imageInput === "" ? imageElement.src = "https://via.placeholder.com/150" :
+        imageInput === "" ? imageElement.src = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" :
         imageElement.src = imageInput;    });
 
     dltButton.addEventListener("click", function () {
