@@ -19,6 +19,13 @@ body {
 
 }
 
+.add-btn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+}
+
 /* style the button */
 button {
     background-color: rgb(4, 72, 4);
