@@ -1,3 +1,31 @@
+// cursor trail
+document.addEventListener('DOMContentLoaded', function () {
+    const body = document.body;
+
+    body.addEventListener('mousemove', function (event) {
+      createSparkle(event.pageX, event.pageY);
+    });
+
+    // add cursor trail
+    function createSparkle(x, y) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = x + 'px';
+      sparkle.style.top = y + 'px';
+      body.appendChild(sparkle);
+
+      setTimeout(() => {
+        sparkle.style.transform = 'scale(1.2)';
+        sparkle.style.opacity = '0';
+      }, 10);
+
+      setTimeout(() => {
+        sparkle.remove();
+      }, 300);
+    }
+  });
+
+
 // Retrieve data from local storage and parse it as JSON
 const savedCards = JSON.parse(localStorage.getItem("cards")) || [];
 console.log(savedCards);

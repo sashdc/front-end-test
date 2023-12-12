@@ -16,7 +16,19 @@ body {
     color: #fff;
     padding: 2rem;
     text-align: center;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
 
+.sparkle {
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background-color: #ffffff33; 
+    border-radius: 100%;
+    pointer-events: none;
+    transition: transform 0.1s ease-out, opacity 0.8s ease-out;
 }
 
 .add-btn{
