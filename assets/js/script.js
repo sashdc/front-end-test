@@ -47,7 +47,7 @@ function createCard(h3Input, pInput, imageInput) {
     pElement.textContent = pInput;
 
     const imageElement = document.createElement("img");
-    // add ternary operateor for image source using placehoolder image if no link is provided
+    // add ternary operator for image source using placeholder image if no link is provided
     imageInput === "" ? imageElement.src = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" :
     imageElement.src = imageInput;
     imageElement.classList.add("img");
